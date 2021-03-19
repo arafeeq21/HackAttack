@@ -1,0 +1,14 @@
+{
+  "operations": [{
+    "operation_type": "create_playlist",
+    "playlist": {
+      "id": "1",
+      "user_id": "2",
+      "song_ids": [
+        "2",
+        "3"
+      ]
+    }
+  }
+  ]
+}

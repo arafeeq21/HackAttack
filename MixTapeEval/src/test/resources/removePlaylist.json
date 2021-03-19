@@ -1,0 +1,7 @@
+{
+  "operations": [
+    {
+      "operation_type": "remove_playlist",
+      "playlist_id": "1"
+    }
+}
