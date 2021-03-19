@@ -2,6 +2,8 @@ package com.mixtape.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mixtape.actions.ApplyActions;
+import com.mixtape.exception.ItemExistsException;
+import com.mixtape.exception.ItemNotPresentException;
 import com.mixtape.models.MixTape;
 import com.mixtape.models.MixTapeDto;
 import com.mixtape.processors.Processor;
@@ -65,7 +67,11 @@ public class SyncService implements Runnable {
       System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(mergedMixTape));
 
     } catch (IOException e) {
-		e.printStackTrace();    
+	e.printStackTrace();    
+    } catch (ItemNotPresentException itemNotPresentException) {
+      	itemNotPresentException.printStackTrace();
+    } catch (ItemExistsException itemExistsException) {
+        itemExistsException.printStackTrace();
     }
   }
 }
